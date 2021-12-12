@@ -43,6 +43,9 @@ struct LogMessage
   unsigned int id = 0;                    // Unique message ID
   qi::Clock::time_point date;             // Steady clock timestamp
   qi::SystemClock::time_point systemDate; // Wall clock timestamp
+
+  // Timestamp when the message has been posted
+  qi::os::timeval timestamp = qi::os::timeval(systemDate.time_since_epoch());
 };
 }
 

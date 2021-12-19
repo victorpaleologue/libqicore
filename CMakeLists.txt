@@ -1,21 +1,22 @@
 ## Copyright (c) 2012 Aldebaran Robotics. All rights reserved.
 
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.5)
 project(naoqi_libqicore)
-find_package(catkin REQUIRED naoqi_libqi)
-find_package(Boost)
+find_package(ament_cmake REQUIRED)
+find_package(naoqi_libqi REQUIRED)
+find_package(Boost QUIET COMPONENTS chrono filesystem program_options regex system thread random)
 
 add_definitions(-DLIBQI_VERSION=${naoqi_libqi_VERSION_MAJOR}${naoqi_libqi_VERSION_MINOR})
-
-catkin_package(LIBRARIES qicore
-  INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/libqicore/
-  DEPENDS Boost
-)
 
 # Tests
 enable_testing()
 
 add_subdirectory("libqicore")
 
-# Install catkin package.xml
-install(FILES package.xml DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+# Install
+install(FILES package.xml DESTINATION share/${PROJECT_NAME})
+
+ament_export_libraries(qicore)
+ament_export_include_directories(${CMAKE_CURRENT_SOURCE_DIR}/libqicore/)
+ament_export_dependencies(Boost)
+ament_package()

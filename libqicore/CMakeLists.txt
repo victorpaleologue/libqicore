@@ -1,6 +1,7 @@
 ## Copyright (c) 2012, 2014 Aldebaran Robotics. All rights reserved.
 
-include_directories("." ${catkin_INCLUDE_DIRS})
+include_directories("." ${Boost_INCLUDE_DIRS})
+include_directories("." ${naoqi_libqi_INCLUDE_DIRS})
 
 set(PUBLIC_HEADERS
   qicore/api.hpp
@@ -11,7 +12,7 @@ set(PUBLIC_HEADERS
   qicore/file.hpp
   qicore/detail/fileoperation.hxx)
 
-install(FILES ${PUBLIC_HEADERS} DESTINATION ${CATKIN_GLOBAL_INCLUDE_DESTINATION}/qicore)
+install(FILES ${PUBLIC_HEADERS} DESTINATION include/qicore)
 
 add_library(qicore
   ${PUBLIC_HEADERS}
@@ -27,6 +28,7 @@ add_library(qicore
   src/progressnotifier.cpp
   src/progressnotifier_proxy.cpp)
 
-target_link_libraries(qicore ${Boost_LIBRARIES} ${catkin_LIBRARIES})
-install(TARGETS qicore DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION})
+target_link_libraries(qicore ${Boost_LIBRARIES} ${naoqi_libqi_LIBRARIES})
+install(TARGETS qicore DESTINATION lib)
+
 #add_subdirectory("tests")

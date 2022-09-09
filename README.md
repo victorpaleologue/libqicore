@@ -8,5 +8,10 @@ To compile __naoqi_libqicore__, clone this repository in a ROS workspace and use
 Please note that you should checkout the branch corresponding to your ROS distro (eg. `galactic-devel` for Galactic, `foxy-devel` for Foxy, etc...)
 
 ## Status 
+The source and binary status reflect the buildfarm builds for this package. The github build specifies wether it is possible to build this project from source, assuming that the upstream packages have been released (`naoqi_libqi`).
 
-The project can currently be successfully built for `Galactic (focal)` and `Foxy (focal)`. Please refer to the [build workflow](https://github.com/ros-naoqi/libqicore/actions/workflows/build.yml) for more information
+ROS Distro | Binary Status | Source Status | Github Build
+|-------------------|-------------------|-------------------|-------------------|
+Humble | | | [![ros2-humble-jammy](https://github.com/ros-naoqi/libqicore/actions/workflows/humble_jammy.yml/badge.svg)](https://github.com/ros-naoqi/libqicore/actions/workflows/humble_jammy.yml)
+Galactic | [![Build Status](https://build.ros2.org/job/Gbin_uF64__naoqi_libqicore__ubuntu_focal_amd64__binary/badge/icon)](https://build.ros2.org/job/Gbin_uF64__naoqi_libqicore__ubuntu_focal_amd64__binary/) | [![Build Status](https://build.ros2.org/job/Gsrc_uF__naoqi_libqicore__ubuntu_focal__source/badge/icon)](https://build.ros2.org/job/Gsrc_uF__naoqi_libqicore__ubuntu_focal__source/) | [![ros2-galactic-focal](https://github.com/ros-naoqi/libqicore/actions/workflows/galactic_focal.yml/badge.svg)](https://github.com/ros-naoqi/libqicore/actions/workflows/galactic_focal.yml)
+Foxy | [![Build Status](https://build.ros2.org/job/Fbin_uF64__naoqi_libqicore__ubuntu_focal_amd64__binary/badge/icon)](https://build.ros2.org/job/Fbin_uF64__naoqi_libqicore__ubuntu_focal_amd64__binary/) | [![Build Status](https://build.ros2.org/job/Fsrc_uF__naoqi_libqicore__ubuntu_focal__source/badge/icon)](https://build.ros2.org/job/Fsrc_uF__naoqi_libqicore__ubuntu_focal__source/) | [![ros2-foxy-focal](https://github.com/ros-naoqi/libqicore/actions/workflows/foxy_focal.yml/badge.svg)](https://github.com/ros-naoqi/libqicore/actions/workflows/foxy_focal.yml)

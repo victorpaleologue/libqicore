@@ -1,4 +1,4 @@
-# naoqi_libqicore [![build](https://github.com/ros-naoqi/libqicore/actions/workflows/build.yml/badge.svg?branch=ros2)](https://github.com/ros-naoqi/libqicore/actions/workflows/build.yml)
+# naoqi_libqicore
 
 This fork is used to define the __naoqi_libqicore__ ROS2 package, based on [__libqicore__](https://github.com/aldebaran/libqicore).
 

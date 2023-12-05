@@ -75,7 +75,7 @@ qi::FutureSync<qi::LogProviderPtr> initializeLogging(SessionPtr session, const s
   if (initialized)
     throw std::runtime_error("Provider already registered for this process");
 
-  LogManagerPtr lm = session->service("LogManager");
+  LogManagerPtr lm = session->service("LogManager").value();
   LogProviderPtr instance = makeLogProvider(lm);
   if (!categoryPrefix.empty())
     instance->setCategoryPrefix(categoryPrefix);
